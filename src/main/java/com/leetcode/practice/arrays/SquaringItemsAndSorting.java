@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import com.leetcode.practice.arrays.util.ArraysUtil;
 
 public class SquaringItemsAndSorting {
 	
@@ -23,10 +24,7 @@ public class SquaringItemsAndSorting {
 		int[] nums = {-4, -3, 0, 4, 67};
 		int i = 0;
 		int[] result = sortedSquares(nums);
-		logger.info("The array after squaring and sorting is: ");
-		while(i < result.length) {
-			logger.info("Item: " + result[i++]);
-		}
+		ArraysUtil.printArray(result);
 	}
 
 }

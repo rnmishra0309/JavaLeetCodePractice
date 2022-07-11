@@ -3,6 +3,8 @@ package com.leetcode.practice.arrays;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.leetcode.practice.arrays.util.ArraysUtil;
+
 public class NumbersOfEvenDigit {
 	
 	static final Logger logger = LogManager.getLogger(NumbersOfEvenDigit.class);
@@ -51,6 +53,7 @@ public class NumbersOfEvenDigit {
 
 	public static void main(String[] args) {
 		int[] nums = {234, 4567, 12, 345678};
+		ArraysUtil.printArray(nums);
 		logger.info("The number of even digits are: " + findNumbers(nums));
 	}
 
