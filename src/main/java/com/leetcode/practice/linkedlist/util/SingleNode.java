@@ -54,6 +54,10 @@ public class SingleNode implements LinkedListInterface {
 			int ind = 1;
 			while(temp != null) {
 				if(ind == index) {
+					if(temp == tail) {
+						appendElement(data);
+						break;
+					}
 					newNode.next = temp.next;
 					temp.next = newNode;
 					break;
@@ -161,6 +165,8 @@ public class SingleNode implements LinkedListInterface {
 			logger.info("The List is Empty.");
 		} else {
 			Node pointer = head;
+			logger.info("Head: " + head.data.toString());
+			logger.info("Tail: " + tail.data.toString());
 			while(pointer != null) {
 				logger.info("Element is: " + pointer.data.toString());
 				pointer = pointer.next;

@@ -16,16 +16,35 @@ public class BasicSingleLinkedList {
 		}
 //		node.displayNode();
 		node.appendElementAtBeginning(103);
-		node.addElementAtIndex(12204, 11);
+		node.addElementAtIndex(12204, 12);
 //		node.deleteAtBeginning();
-		node.deleteAtEnd();
-		node.deleteAtEnd();
+//		node.deleteAtEnd();
+//		node.deleteAtEnd();
 		node.displayNode();
 		logger.info("Before deletion");
 		node.deleteAtIndex(5);
 		node.displayNode();
 		node.getElement(0);
 		node.searchElement(14);
+	}
+	
+	public static void testCase() {
+		SingleNode node = new SingleNode();
+		node.appendElementAtBeginning(7);
+		node.appendElementAtBeginning(2);
+		node.appendElementAtBeginning(1);
+		node.addElementAtIndex(0,3);
+		
+		node.deleteAtIndex(2);
+		
+		node.appendElementAtBeginning(6);
+		
+		node.appendElement(4);
+		node.displayNode();
+		node.getElement(4);
+		node.appendElementAtBeginning(4);
+		node.addElementAtIndex(0, 5);
+		node.appendElementAtBeginning(6);
 	}
 	
 	public static void testDelete(int element) {
@@ -39,7 +58,8 @@ public class BasicSingleLinkedList {
 	}
 	
 	public static void main(String[] args) {
-		BasicSingleLinkedList.createAndAppendSLL(12, 13, 14, 15, 16, 17, 18, 90, 100, 101, 102);
+		//BasicSingleLinkedList.createAndAppendSLL(12, 13, 14, 15, 16, 17, 18, 90, 100, 101, 102);
 //		BasicSingleLinkedList.testDelete(12);
+		BasicSingleLinkedList.testCase();
 	}
 }

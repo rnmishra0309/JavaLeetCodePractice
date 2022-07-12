@@ -21,55 +21,45 @@ public class DoubleLinkedNode implements LinkedListInterface {
 			this.prev = null;
 		}
 	}
+	
+	public DoubleLinkedNode() {
+		head = new Node(-1);
+        tail = new Node(-1);
+        head.next = tail;
+        tail.prev = head;
+	}
 
 	public void appendElement(int data) {
-		if(head == null) {
-			Node newNode = new Node(data);
-			head = newNode;
-			tail = newNode;
-		} else {
-			Node temp = new Node(data);
-			tail.next = temp;
-			temp.prev = tail;
-			tail = temp;
-		}
+		Node n = new Node(data);
+        n.next = tail;
+        n.prev = tail.prev;
+        tail.prev = n;
+        n.prev.next = n;
 	}
 
 	public void appendElementAtBeginning(int data) {
-		if(head == null) {
-			Node newNode = new Node(data);
-			head = newNode;
-			tail = newNode;
-		} else {
-			Node temp = new Node(data);
-			head.prev = temp;
-			temp.next = head;
-			head = temp;
-		}
+		Node n = new Node(data);
+        n.next = head.next;
+        n.prev = head;
+        head.next = n;
+        n.next.prev = n;
 	}
 
 	public void addElementAtIndex(int data, int index) {
-		if(head == null) {
-			Node newNode = new Node(data);
-			head = newNode;
-			tail = newNode;
-		} else if(index == 0) {
-			appendElementAtBeginning(data);
-		} else {
-			Node newNode = new Node(data);
-			int ind = 1;
-			Node temp = head;
-			while(temp.next != null) {
-				if(ind == index) {
-					temp.next.prev = newNode;
-					newNode.next = temp.next;
-					newNode.prev = temp;
-					temp.next = newNode;
-				}
-				ind++;
-				temp = temp.next;
-			}
-		}
+		int i = 0;
+        Node p = head;
+        for(; i < index && p.next != tail; i++) {
+            p = p.next;
+        }
+
+        if(i != index)
+            return;
+
+        Node n = new Node(data);
+        n.prev = p;
+        n.next = p.next;
+        p.next = n;
+        n.next.prev = n;
 	}
 
 	public void deleteAtBeginning() {
@@ -101,45 +91,33 @@ public class DoubleLinkedNode implements LinkedListInterface {
 	}
 
 	public void deleteAtIndex(int index) {
-		if(head == null) {
-			logger.info("There is no DLL to begin with.");
-		} else if(index == 0) {
-			deleteAtBeginning();
-		}else {
-			int ind = 0;
-			Node temp = head;
-			while(temp.next != null) {
-				if(ind == index) {
-					temp.prev.next = temp.next;
-					temp.next.prev = temp.prev;
-					temp.next = null;
-					temp.prev = null;
-					break;
-				}
-				ind++;
-				temp = temp.next;
-			}
-		}
+		int i = 0;
+        Node p = head;
+        for(; i < index && p.next != tail; i++) {
+            p = p.next;
+        }
+
+        if(p.next == tail)
+            return;
+
+        p.next = p.next.next;
+        p.next.prev = p;
 	}
 
 	public void getElement(int index) {
 		if(head == null) {
 			logger.info("There is no DLL to begin with.");
 		} else {
-			int ind = 0;
-			Node temp = head;
-			while(temp != null) {
-				if(ind == index) {
-					logger.info("Element is at: " + ind + " value is: " + temp.data.toString());
-					ind = -1;
-					break;
-				}
-				ind++;
-				temp = temp.next;
-			}
-			if(ind != -1) { 
-				logger.info("Index not found.");
-			}
+			if(index < 0)
+	            logger.info("Invalid Index.");
+
+	        int i = 0;
+	        Node p = head;
+	        for(; i < index && p.next != tail; i++) {
+	            p = p.next;
+	        }
+
+	        logger.info("Element is: " + p.next.data.toString());
 		}
 	}
 
