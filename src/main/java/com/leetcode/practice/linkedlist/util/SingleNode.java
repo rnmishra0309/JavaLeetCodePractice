@@ -10,9 +10,10 @@ public class SingleNode implements LinkedListInterface {
 	public Node head;
 	public Node tail;
 	
-	class Node {
-		Integer data;
-		Node next;
+	public class Node {
+		public Integer data;
+		public Node next;
+		public Node down;
 		
 		public Node(int data) {
 			this.data = data;

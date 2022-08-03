@@ -22,7 +22,6 @@ public class SquaringItemsAndSorting {
 
 	public static void main(String[] args) {
 		int[] nums = {-4, -3, 0, 4, 67};
-		int i = 0;
 		int[] result = sortedSquares(nums);
 		ArraysUtil.printArray(result);
 	}

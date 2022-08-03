@@ -5,6 +5,7 @@ public class TreeNode {
 	public int id;
 	public TreeNode left;
 	public TreeNode right;
+	public TreeNode next;
 
 	public TreeNode() {
 	}

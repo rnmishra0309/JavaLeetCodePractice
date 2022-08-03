@@ -10,10 +10,11 @@ public class DoubleLinkedNode implements LinkedListInterface {
 	public Node head;
 	public Node tail;
 	
-	class Node {
-		Integer data;
-		Node next;
-		Node prev;
+	public class Node {
+		public Integer data;
+		public Node next;
+		public Node prev;
+		public Node child;
 		
 		public Node(int data) {
 			this.data = data;

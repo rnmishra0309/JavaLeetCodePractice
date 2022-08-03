@@ -5,8 +5,6 @@ import org.apache.logging.log4j.Logger;
 
 import com.leetcode.practice.queue.util.LinearQueue;
 
-import java.util.*;
-
 public class LinearQueueMain {
 
 	

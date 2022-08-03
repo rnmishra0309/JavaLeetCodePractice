@@ -5,6 +5,7 @@ import com.leetcode.practice.linkedlist.util.ListNode;
 public class MergeTwoSortedSingleLists {
 	// Needed some help O(N) O(1)
 	public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+		// Corner cases: when either one list is null or both lists are null;
         if(list1 == null && list2 == null) {
             return null;
         } else if(list1 != null && list2 == null) {

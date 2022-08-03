@@ -2,7 +2,6 @@ package com.leetcode.practice.trees.binarytrees;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 import java.util.Stack;
 
 import org.apache.logging.log4j.LogManager;
