@@ -33,6 +33,7 @@ public class FindKFrequentElementsUsingHeap {
 	}
 	
 	// there are more answer in the bucket sort section
+	@SuppressWarnings("unchecked")
 	public List<Integer> findKFrequentElementsUsingBucketSort(int[] arr, int k) {
 		List<Integer> result = new ArrayList<Integer>();
 		// 1. put the elements in the hashmap with frequency
