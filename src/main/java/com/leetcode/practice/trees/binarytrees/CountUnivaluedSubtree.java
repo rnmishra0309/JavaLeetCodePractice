@@ -39,6 +39,27 @@ public class CountUnivaluedSubtree {
 	}
 	
 	// Somewhat efficient - https://www.geeksforgeeks.org/find-count-of-singly-subtrees/
+	public static int callIsUnivaluedSubTree(TreeNode root) {
+		if(root == null) return 0;
+		isUnivaluedSubTree(root);
+		return count;
+	}
+	public static boolean isUnivaluedSubTree(TreeNode root) {
+		if(root.left == null && root.right == null) {
+			count++;
+			return true;
+		}
+		boolean isUnivalued = true;
+		if(root.left != null) {
+			isUnivalued = isUnivaluedSubTree(root.left) && isUnivalued && root.val == root.left.val;
+		}
+		if(root.right != null) {
+			isUnivalued = isUnivaluedSubTree(root.right) && isUnivalued && root.val == root.right.val;
+		}
+		if(!isUnivalued) return false;
+		count++;
+		return true;
+	}
 	
 	public static void main(String[] args) {
 		TreeNode root = new TreeNode(5);

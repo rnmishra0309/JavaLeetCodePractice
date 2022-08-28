@@ -10,40 +10,8 @@ import java.util.*;
 public class SymmetricTree {
 
 	static final Logger logger = LogManager.getLogger(SymmetricTree.class);
-
-	// My Solution: It has some issues but good idea though.
-	/**
-	 * 1. Do pre-order traversal in the root.left and push the elements into the
-	 * stack; 2. Do post-order traversal in the root.right and pop from the stack
-	 * and compare; 3. if stack is empty then it is mirror else not.
-	 */
-	public static Stack<TreeNode> stack = new Stack<TreeNode>();
+	
 	public static Queue<TreeNode> queue = new LinkedList<TreeNode>();
-
-	public static void putInStackUsingPreOrderTraversal(TreeNode node) {
-		if (node == null)
-			return;
-		stack.push(node);
-		putInStackUsingPreOrderTraversal(node.left);
-		putInStackUsingPreOrderTraversal(node.right);
-		return;
-	}
-
-	public static void checkFromStackUsingPostOrderTraversal(TreeNode node) {
-		if (node == null)
-			return;
-		checkFromStackUsingPostOrderTraversal(node.left);
-		checkFromStackUsingPostOrderTraversal(node.right);
-		if (node.id == stack.peek().id)
-			stack.pop();
-		return;
-	}
-
-	public static boolean isSymmetric(TreeNode root) {
-		putInStackUsingPreOrderTraversal(root.left);
-		checkFromStackUsingPostOrderTraversal(root.right);
-		return stack.isEmpty();
-	}
 
 	// Recursive solution
 	public static boolean isSymmetricRecursive(TreeNode root) {
@@ -89,7 +57,6 @@ public class SymmetricTree {
 		root.right.left = new TreeNode(4, 3);
 		root.right.right = new TreeNode(3, 2);
 
-		logger.info(isSymmetric(root));
 		logger.info(isSymmetricRecursive(root));
 		logger.info(isSymmetricIterative(root));
 	}
