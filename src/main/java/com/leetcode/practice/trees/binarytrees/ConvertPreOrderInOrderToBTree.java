@@ -1,8 +1,14 @@
 package com.leetcode.practice.trees.binarytrees;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.leetcode.practice.trees.binarytrees.util.TreeNode;
 
 public class ConvertPreOrderInOrderToBTree {
+	
+	static final Logger logger = LogManager.getLogger(ConvertPreOrderInOrderToBTree.class);
+	
 	public static TreeNode buildTree(int[] preorder, int[] inorder) {
         int length = inorder.length;
         TreeNode root = helper(preorder, inorder, 0, length-1, 0, length-1);
@@ -28,5 +34,6 @@ public class ConvertPreOrderInOrderToBTree {
     	int[] preorder = {3,9,20,15,7};
     	int[] inorder = {9,3,15,20,7};
     	TreeNode root = buildTree(preorder, inorder);
+    	logger.info(root);
     }
 }

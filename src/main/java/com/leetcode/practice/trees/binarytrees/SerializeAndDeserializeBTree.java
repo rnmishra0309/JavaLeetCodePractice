@@ -1,7 +1,5 @@
 package com.leetcode.practice.trees.binarytrees;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -58,5 +56,6 @@ public class SerializeAndDeserializeBTree {
 		String data = serialize(root);
 		logger.info(data);
 		TreeNode node = deserialize(data);
+		logger.info(node);
     }
 }

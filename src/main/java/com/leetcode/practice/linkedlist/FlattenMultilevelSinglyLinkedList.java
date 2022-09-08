@@ -60,7 +60,6 @@ public class FlattenMultilevelSinglyLinkedList {
 	}
 	
 	public static void main(String[] args) {
-		Node head = new Node(1);
 		
 	}
 }
