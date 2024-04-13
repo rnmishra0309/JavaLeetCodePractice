@@ -5,9 +5,9 @@ import java.util.Arrays;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class ArraysUtil {
+public class ArrayUtil {
 	
-	static final Logger logger = LogManager.getLogger(ArraysUtil.class);
+	static final Logger logger = LogManager.getLogger(ArrayUtil.class);
 	
 	public static void printArray(int[] array) {
 		logger.info("The elements in array is: ");

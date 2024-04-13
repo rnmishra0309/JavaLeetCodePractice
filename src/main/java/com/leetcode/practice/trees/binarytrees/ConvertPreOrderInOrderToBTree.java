@@ -9,19 +9,18 @@ public class ConvertPreOrderInOrderToBTree {
 	
 	static final Logger logger = LogManager.getLogger(ConvertPreOrderInOrderToBTree.class);
 	
-	public static TreeNode buildTree(int[] preorder, int[] inorder) {
+	public static TreeNode buildTree(Integer[] preorder, Integer[] inorder) {
         int length = inorder.length;
-        TreeNode root = helper(preorder, inorder, 0, length-1, 0, length-1);
-        return root;
+        return helper(preorder, inorder, 0, length-1, 0, length-1);
     }
     
-    public static TreeNode helper(int[] preorder, int[] inorder, int inStart, int inEnd, int preStart, int preEnd) {
+    public static TreeNode helper(Integer[] preorder, Integer[] inorder, int inStart, int inEnd, int preStart, int preEnd) {
         if(preStart > preorder.length - 1 || inStart > inEnd) return null;
         int rootValue = preorder[preStart];
         TreeNode root = new TreeNode(rootValue);
         int rootIndex = 0;
         for(; rootIndex <= inEnd; rootIndex++) {
-            if(inorder[rootIndex] == rootValue) break;
+            if(inorder[rootIndex] != null && inorder[rootIndex] == rootValue) break;
         }
         int leftSubTreeSize = rootIndex - inStart;
         int rightSubTreeSize = inEnd - rootIndex;
@@ -31,8 +30,8 @@ public class ConvertPreOrderInOrderToBTree {
     }
     
     public static void main(String[] args) {
-    	int[] preorder = {3,9,20,15,7};
-    	int[] inorder = {9,3,15,20,7};
+        Integer[] preorder = {3,9,20,15,7};
+        Integer[] inorder = {9,3,15,20,7};
     	TreeNode root = buildTree(preorder, inorder);
     	logger.info(root);
     }

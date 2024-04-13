@@ -43,14 +43,14 @@ public class MainClass {
 
 	public static void main(String[] args) {
 		int[] nums = new int[7];
-		nums = ArraysUtil.insertArrayElements(nums, 1, 2, 3, 4, 5);
-		ArraysUtil.printArray(nums);
-		nums = ArraysUtil.insertAtEnd(nums, 7);
-		ArraysUtil.printArray(nums);
-		nums = ArraysUtil.insertAtBeginning(nums, 12);
-		ArraysUtil.printArray(nums);
-		nums = ArraysUtil.insertAtIndex(nums, 3, 78);
-		ArraysUtil.printArray(nums);
+		nums = ArrayUtil.insertArrayElements(nums, 1, 2, 3, 4, 5);
+		ArrayUtil.printArray(nums);
+		nums = ArrayUtil.insertAtEnd(nums, 7);
+		ArrayUtil.printArray(nums);
+		nums = ArrayUtil.insertAtBeginning(nums, 12);
+		ArrayUtil.printArray(nums);
+		nums = ArrayUtil.insertAtIndex(nums, 3, 78);
+		ArrayUtil.printArray(nums);
 		int[] num = {1,0,2,3,4,0,5,0};
 		duplicateZeros(num);
 	}
