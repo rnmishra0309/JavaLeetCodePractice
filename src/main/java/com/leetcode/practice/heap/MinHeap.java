@@ -10,7 +10,7 @@ public class MinHeap {
 	static final Logger logger = LogManager.getLogger(MinHeap.class);
 	
 	// store the heap elements using Vector
-	private Vector<Integer> heap;
+	private final Vector<Integer> heap;
 	
 	public MinHeap() {
 		heap = new Vector<Integer>();
