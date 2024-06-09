@@ -18,4 +18,20 @@ public class Pair<T, U> {
         return second;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if(this == o) return true;
+
+        if(!(o instanceof Pair)) return false;
+
+        Pair<?,?> pair = (Pair<?,?>) o;
+
+        return (this.second.equals(pair.second) || this.second.equals(pair.first))
+                && (this.first.equals(pair.first) || this.first.equals(pair.second));
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Pair[%s -> %s]", first, second);
+    }
 }
